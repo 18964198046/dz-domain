@@ -1,0 +1,73 @@
+
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+
+spring:
+  datasource:
+    #118.31.126.59
+    #127.0.0.1
+    url: jdbc:mysql://127.0.0.1:3306/domain?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: xxaq3302
+    diver-class-name: com.mysql.jdbc.Driver
+    default-auto-commit: true
+    auto-commit: true
+    maximum-pool-size: 100
+    max-idle: 10
+    max-wait: 10000
+    min-idle: 5
+    initial-size: 5
+    validation-query: SELECT 1
+    test-on-borrow: false
+    test-while-idle: true
+    time-between-eviction-runs-millis: 18800
+    min-evictable-idle-time-millis: 300000
+  jpa:
+    database: MYSQL
+    show-sql: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+        naming:
+          physical_strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        format_sql: true
+        order_inserts: true
+        order_updates: true
+        jdbc:
+          batch_size: 1000
+
+threadPool:
+  corePoolSize: 100
+  maximumPoolSize: 100
+
+
+#http:
+#  #最大连接数
+#  maxTotal: 100
+#  #数据传输的最长时间
+#  socketTimeout: 10000
+#  #创建连接的最长时间
+#  connectTimeout: 1000
+#  #并发数
+#  defaultMaxPerRoute: 20
+#  #从连接池中获取到连接的最长时间
+#  connectionRequestTimeout: 500
+#  #提交请求前测试连接是否可用
+#  staleConnectionCheckEnabled: true
+
+xlsx:
+  isRead: false
+  filePath: C:\Users\Administrator\Desktop\domain.xlsx
+
+csv:
+  isRead: false
+  filePath: C:\Users\Administrator\Desktop\domain.csv
+
+
+logging:
+  level:
+    root: info
